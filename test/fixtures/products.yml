@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  namd: MyString
+  description: MyText
+  category: 1
+  sub_category: 1
+  price: 1.5
+
+two:
+  namd: MyString
+  description: MyText
+  category: 1
+  sub_category: 1
+  price: 1.5

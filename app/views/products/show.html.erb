@@ -1,0 +1,29 @@
+<h1>Products#show</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @product.name %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @product.description %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+ 
+<p>
+  <strong>SubCategory:</strong>
+  <%= @product.sub_category %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag (@product.image ) %>
+</p>
+ 
+
