@@ -16,8 +16,15 @@ body{
 <div> Description:</br><%=p.description %></div>
 <div>Price:</br><%=p.price %></div>
 <div>Image:</br><%=image_tag(p.image) %></div>
-<%= link_to 'Show', product_path(p) %>
+<% if current_user && current_user.is_admin? %>
+<%= link_to 'Edit', edit_product_path(p) %>
 
+
+<%= link_to 'New', new_product_path %>
+<%= link_to 'Delete', product_path(p),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<% end%>
 <% end %>
 </br>
 ------------------------
@@ -26,9 +33,6 @@ body{
 <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
 <% else %>
 <%= link_to "Sign in ", new_user_session_path %>
-<% end%>
-<% if current_user && current_user.is_admin? %>
-<%= link_to 'Admin Panel', admin_index_path %>
 <% end%>
 
 </body>
