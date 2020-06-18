@@ -1,2 +1,16 @@
 <h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+
+<%= form_with(model: @category, local: true) do |f| %>
+<p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+<p>
+<%= f.label :Parent_id %> <br>
+<%= f.number_field :parent_id %>
+</p>
+ <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>

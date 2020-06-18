@@ -17,11 +17,9 @@ body{
 <div>Price:</br><%=p.price %></div>
 <div>Image:</br><%=image_tag(p.image) %></div>
 <%= link_to 'Show', product_path(p) %>
-
+</br>=====================</br>
 <% end %>
-</br>
-------------------------
-</br>
+
 <% if current_user  %>
 <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
 <% else %>

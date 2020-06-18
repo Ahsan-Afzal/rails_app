@@ -1,2 +1,23 @@
 <h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+
+<p>Name:  <%= @category.name %> </p>
+<%= link_to 'Back', admin_index_path %> </br>
+<%= link_to 'Add Another Category', new_category_path %></br>
+<%= link_to 'Edit', edit_category_path(@category) %></br>
+===============================
+
+<p>SUB  CATERGORIES </p>
+<% @categories = Category.all%>
+<% @categories.each do |c|%>
+    <%if @category.id == c.parent_id  %>
+    <div>Name:</br> <%= c.name %></div>
+    <%= link_to 'Edit', edit_category_path(c) %></br>
+    <%= link_to 'Show', category_path(c) %></br>
+    <%= link_to 'Delete', category_path(c),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    </br>=====================</br>
+    <% end %>
+<% end %>
+
+
