@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   def create
     
     @product = Product.new(product_params)
-    @product.category = Category.get_parent_id(@product.sub_category)
     @product.save
     redirect_to @product
 
@@ -26,7 +25,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_path
+    redirect_to admin_index_path
   end
 
   def index
@@ -39,6 +38,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :category, :sub_category, :price, :image)
+    params.require(:product).permit(:name, :description, :category_id, :price, :image)
   end
 end

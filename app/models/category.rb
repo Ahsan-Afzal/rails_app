@@ -1,5 +1,3 @@
 class Category < ApplicationRecord
-    def get_parent_id(i)
-        return Category.where(id: i).parent_id
-    end
+    has_many :products , :dependent => :delete_all
 end

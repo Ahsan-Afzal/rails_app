@@ -10,8 +10,8 @@
      <%= f.text_area :description %>
   </p>
    <p>
-    <%= f.label :SubCategory %><br>
-    <%= f.collection_select :sub_category, Category.where.not(parent_id: nil) , :id, :name , include_blank: true %>
+    <%= f.label :Categories %><br>
+    <%= f.collection_select :category_id, Category.all , :id, :name , include_blank: true %>
   </p>
   
  

@@ -1,51 +1,75 @@
 <head>
+
 <style>
-body{
+body
+{
     margin-left : 40%
 }
-
 </style>
-</head>
 
+</head>
 
 <body>
 
 <h1>All Products</h1>
+
 <% @products.each do |p| %>
-<div>Name:</br> <%=p.name %></div>
-<div> Description:</br><%=p.description %></div>
-<div>Price:</br><%=p.price %></div>
-<div>Image:</br><%=image_tag(p.image) %></div>
+
+<div>Name:</br> 
+<%=p.name %></div>
+
+<div> Description:</br>
+<%=p.description %></div>
+
+<div>Price:</br>
+<%=p.price %></div>
+
+<div>
+Image:</br>
+<%=image_tag(p.image)%>
+</div>
+
 <% if current_user && current_user.is_admin? %>
-<%= link_to 'Edit', edit_product_path(p) %>
-<%= link_to 'Delete', product_path(p),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+
+    <%= link_to 'Edit', edit_product_path(p) %>
+    <%= link_to 'Delete', product_path(p),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
 <% end%>
-<% end %> </br>
+
+<% end %>
+ </br>
+
 <%= link_to 'New', new_product_path %>
+
 </br>=====================</br>
-    <h1>All Categories</h1>
-    <% @categories.each do |c| %>
-    <% if !c.parent_id %>
-    <div>Category:</br> <%= c.name %></div>
-    <div>Category id:</br> <%= c.id %></div>
-    <%= link_to 'Edit', edit_category_path(c) %></br>
-    <%= link_to 'Show', category_path(c) %></br>
-    
-    <%= link_to 'Delete', category_path(c),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+
+<h1>All Categories</h1>
+
+<% @categories.each do |c| %>
+
+<% if !c.parent_id %>
+
+        <div>Category:</br> <%= c.name %></div>
+        <div>Category id:</br> <%= c.id %></div>
+        <%= link_to 'Edit', edit_category_path(c) %></br>
+        <%= link_to 'Show', category_path(c) %></br>
+        <%= link_to 'Delete', category_path(c),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
      <% end %>  
-    <% end %>
+<% end %>
+
     </br>
     <%= link_to 'new', new_category_path %>  
     </br>=====================</br>
 </br>
 <% if current_user  %>
-<%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "Sign in ", new_user_session_path %>
+    <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "Sign in ", new_user_session_path %>
 <% end%>
 
 </body>

@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   resources :products, path: '/admin/products' , only: [:edit ]
-  resources :products, except: [:edit, :destroy]
+  resources :products, except: [:edit]
   resources :admin
   resources :categories , path: '/admin/categories'
+  #resources :articles do
+  #  resources :comments
+  #raend
 
   root 'products#index'
 end

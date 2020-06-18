@@ -7,17 +7,7 @@
 <p>
   <strong>Text:</strong>
   <%= @product.description %>
-</p>
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
- 
-<p>
-  <strong>SubCategory:</strong>
-  <%= @product.sub_category %>
-</p>
-<p>
+
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
@@ -26,5 +16,4 @@
   <%= image_tag (@product.image ) %>
 </p>
  </br>
- <%= link_to 'View All Products', '/' %>
-
+<%= link_to 'View All Products', admin_index_path %> </br>

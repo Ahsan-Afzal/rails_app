@@ -9,14 +9,11 @@
     <%= f.label :Description %><br>
      <%= f.text_area :description %>
   </p>
-   <p>
-    <%= f.label :category %><br>
-    <%= f.number_field :category %>
+  <p>
+    <%= f.label :Categories %><br>
+    <%= f.collection_select :category_id, Category.all , :id, :name , include_blank: true %>
   </p>
-   <p>
-    <%= f.label :SubCategory %><br>
-     <%= f.number_field :sub_category %>
-  </p>
+   
  
   <p>
     <%= f.label :Price %><br>

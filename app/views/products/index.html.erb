@@ -11,22 +11,24 @@ body{
 <body>
 
 <h1>All Products</h1>
+
 <% @products.each do |p| %>
-<div>Name:</br> <%=p.name %></div>
-<div> Description:</br><%=p.description %></div>
-<div>Price:</br><%=p.price %></div>
-<div>Image:</br><%=image_tag(p.image) %></div>
-<%= link_to 'Show', product_path(p) %>
-</br>=====================</br>
+    <div>Name:</br> <%=p.name %></div>
+    <div> Description:</br><%=p.description %></div>
+    <div>Price:</br><%=p.price %></div>
+    <div>Image:</br><%=image_tag(p.image) %></div>
+    <%= link_to 'Show', product_path(p) %>
+    </br>=====================</br>
 <% end %>
 
 <% if current_user  %>
-<%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
+    <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
 <% else %>
-<%= link_to "Sign in ", new_user_session_path %>
+    <%= link_to "Sign in ", new_user_session_path %>
 <% end%>
-<% if current_user && current_user.is_admin? %>
-<%= link_to 'Admin Panel', admin_index_path %>
+
+<% if current_user && current_user.is_admin? %> </br>
+    <%= link_to 'Admin Panel', admin_index_path %>
 <% end%>
 
 </body>
