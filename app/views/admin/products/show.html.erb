@@ -1,0 +1,19 @@
+<h1>Products#show</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @product.name %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @product.description %>
+
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag (@product.image ) %>
+</p>
+ </br>
+<%= link_to 'View All Products', products_dashboard_path %> </br>

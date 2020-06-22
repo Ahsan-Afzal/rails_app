@@ -1,0 +1,7 @@
+<h1>  All Users  </h1>
+<% @users.each do |u| %>
+<div> Email : </div>
+<div> <%= u.email %></div>
+<%= link_to "delete", user_path(id: u.id), method: :delete, data: { confirm: "Are you sure"} %><br>
+<%end%>
+<%= link_to  "View All Categories", users_dashboard_path %>

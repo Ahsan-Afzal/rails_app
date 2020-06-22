@@ -9,7 +9,7 @@ body{
 
 
 <body>
-
+<%= render 'layouts/header' %>
 <h1>All Products</h1>
 
 <% @products.each do |p| %>
@@ -21,14 +21,6 @@ body{
     </br>=====================</br>
 <% end %>
 
-<% if current_user  %>
-    <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign in ", new_user_session_path %>
-<% end%>
-
-<% if current_user && current_user.is_admin? %> </br>
-    <%= link_to 'Admin Panel', admin_index_path %>
-<% end%>
 
 </body>
+    

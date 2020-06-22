@@ -1,0 +1,28 @@
+<head>
+<style>
+body{
+    margin-left : 40%
+}
+
+</style>
+</head>
+
+
+<body>
+
+    <h1>All Categories</h1>
+    <% @categories.each do |c| %>
+    <div>Name:</br> <%= c.name %></div>
+    <div>Prent_id:</br><%= c.parent_id %></div>
+    <%= link_to 'Edit', edit_category_path(c) %></br>
+    <%= link_to 'Show', category_path(c) %>
+    </br>=====================</br>
+<% end %>
+........................................................
+</br>
+<%= link_to 'Admin Panel', admin_index_path %></br>
+<%= link_to 'Add New Category', new_category_path %> </br>
+
+
+
+</body>

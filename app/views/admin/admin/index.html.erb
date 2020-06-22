@@ -1,0 +1,94 @@
+
+ <head>
+
+<style>
+body
+{
+    margin-left : 40%
+}
+</style>
+
+</head>
+
+<body>
+ <%= render  'layouts/header' %>
+<h1>All Products</h1>
+
+<% @products.each do |p| %>
+
+<div>Name:</br> 
+<%=p.name %></div>
+
+<div> Description:</br>
+<%=p.description %></div>
+
+<div>Price:</br>
+<%=p.price %></div>
+
+<div>
+Image:</br>
+<%=image_tag(p.image)%>
+</div>
+
+<% if current_user && current_user.is_admin? %>
+    <%= link_to "show", admin_product_path(p) %>
+    <%= link_to 'Edit', edit_admin_product_path(p) %>
+    <%= link_to 'Delete', admin_product_path(p),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
+<% end%>
+
+<% end %>
+
+
+
+
+
+
+
+
+<%
+=begin%>
+ <%= 
+    grid(@grid) do |g|
+       g.column name: 'Name' do |p|
+         p.name
+       end
+       g.column name: 'Description' do |p|
+         p.description
+       end
+    end
+ %> 
+<%
+=end%>
+
+
+
+
+
+
+
+
+
+
+
+ </br>
+
+<%= link_to 'New', new_admin_product_path %>
+
+</br>=====================</br>
+
+
+</body> 
+
+<div>
+<%= link_to "Products_dashboard ", products_dashboard_path %>
+</div>
+
+ <div>
+ <%= link_to "Categories_dashboad ", categories_dashboard_path %>
+ </div>
+<div>
+ <%= link_to "Users_dashboad ", users_dashboard_path %>
+ </div>

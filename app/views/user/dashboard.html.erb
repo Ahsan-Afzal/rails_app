@@ -1,0 +1,8 @@
+<div id="show">
+Name: <%= @user.email %>
+</div>
+<div id="show">
+Joining date: <%= @user.created_at %>
+</div>
+<%= link_to  "Edit Details", edit_user_registration_path %>
+<%= link_to  "Home Page", home_index_path %>

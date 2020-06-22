@@ -1,0 +1,16 @@
+<h1>All Products</h1>
+
+<% @products.each do |p| %>
+    <div>Name:</br> <%=p.name %></div>
+    <div> Description:</br><%=p.description %></div>
+    <div>Price:</br><%=p.price %></div>
+    <div>Image:</br><%=image_tag(p.image) %></div>
+     <%= link_to "show", admin_product_path(p) %>
+    <%= link_to 'Edit', edit_admin_product_path(p) %>
+    <%= link_to 'Delete', admin_product_path(p),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+    </br>=====================</br>
+<% end %>
+<%= link_to 'Add New Product' ,new_admin_product_path %>
+<%= link_to  "Admin Panel", admin_index_path %>

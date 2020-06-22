@@ -1,0 +1,20 @@
+<h1>Categories#show</h1>
+
+<p>Name:  <%= @category.name %> </p>
+    
+  
+===============================
+
+<p>SUB  CATERGORIES </p>
+<% @categories = Category.all%>
+<% @categories.each do |c|%>
+    <%if @category.id == c.parent_id  %>
+    <div>Name:</br> <%= c.name %></div>
+    
+    </br>=====================</br>
+    <% end %>
+<% end %>
+
+<%= link_to  "View All Categories", categories_dashboard_path %>
+
+

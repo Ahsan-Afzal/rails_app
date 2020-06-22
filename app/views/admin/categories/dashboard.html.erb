@@ -1,0 +1,15 @@
+ <h1>All Categories</h1>
+    <% @categories.each do |c| %>
+    <div>Name:</br> <%= c.name %></div>
+    <div>Prent_id:</br><%= c.parent_id %></div>
+  <%= link_to 'Edit', edit_admin_category_path(c) %></br>
+        <%= link_to 'Show', admin_category_path(c) %></br>
+        <%= link_to 'Delete', admin_category_path(c),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+    </br>=====================</br>
+
+<% end %>
+
+    <div><%= link_to  "Add New Category", new_admin_category_path %></div>
+    <div><%= link_to  "Admin Panel", admin_index_path %></div>
