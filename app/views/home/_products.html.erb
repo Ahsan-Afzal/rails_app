@@ -1,0 +1,6 @@
+<div>Name:</br> <%=p.name %></div>
+    <div> Description:</br><%=p.description %></div>
+    <div>Price:</br><%=p.price %></div>
+    <div>Image:</br><%=image_tag(p.image, style: 'width:150px height:150px') %></div>
+    <%= link_to 'Show', product_path(p) %>
+    <div><%= link_to 'Add to cart', shopping_cart_path(product_id: p.id , product_name: p.name), :method => 'POST' %></div>

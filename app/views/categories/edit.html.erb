@@ -1,14 +1,17 @@
 <h1>Categories#edit</h1>
 
 <%= form_with(model: @category, local: true) do |f| %>
+
 <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+
 <p>
 <%= f.label :Parent_id %> <br>
 <%= f.number_field :parent_id %>
 </p>
+
  <p>
     <%= f.submit %>
   </p>

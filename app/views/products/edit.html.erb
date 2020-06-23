@@ -1,24 +1,27 @@
 <h1>Products#edit</h1>
 
 <%= form_with(model: @product, local: true) do |f| %>
+
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+
    <p>
     <%= f.label :Description %><br>
      <%= f.text_area :description %>
   </p>
+
   <p>
     <%= f.label :Categories %><br>
     <%= f.collection_select :category_id, Category.all , :id, :name , include_blank: true %>
   </p>
    
- 
   <p>
     <%= f.label :Price %><br>
     <%= f.number_field :price %>
   </p>
+
   <p>
     <%= image_tag (@product.image) %><br>
     <%= f.label :Image %><br>
@@ -28,4 +31,5 @@
   <p>
     <%= f.submit %>
   </p>
+  
 <% end %>
