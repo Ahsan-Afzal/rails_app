@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'rack-timeout', '0.3.2'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'acts_as_shopping_cart'
@@ -59,5 +59,4 @@ end
 
 group :production do 
 gem 'pg'
-gem 'rails_12factor'
 end
