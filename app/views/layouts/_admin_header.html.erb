@@ -8,3 +8,14 @@
 &nbsp|| &nbsp
 
  <%= link_to "Users_dashboad ", users_dashboard_path %>
+ 
+<div>
+ <% if current_user  %>
+    <%= link_to "Sign out ", destroy_user_session_path, method: :delete %>
+    &nbsp || &nbsp
+    <%= link_to  "Profile", user_dashboard_path %>
+<% else %>
+    <%= link_to "Sign in ", new_user_session_path %>
+<% end%>
+
+</div>
