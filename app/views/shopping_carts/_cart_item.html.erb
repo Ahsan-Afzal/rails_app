@@ -1,9 +1,13 @@
 <div>
-  
+
+  <h4>Item id :: </h4></br>
   <%=item.item_id%>
-  <%=item.price_cents %>
+  <h4>Item Price :: </h4></br>
+  <%=item.price_cents/100 %>
+  <h4>Item Quantity :: </h4></br>
   <%=item.quantity %>
    <%= link_to  "Remove From Cart", shopping_cart_path(product_id: item.item_id),
                 method: :delete,
                 data: { confirm: 'Are you sure?' }  %>
+                ==================================================
   </div> 
