@@ -1,10 +1,8 @@
 class CreateProducts < ActiveRecord::Migration[6.0]
   def change
-    create_table :products do |t|
+    create_table :categories do |t|
       t.string :name
-      t.text :description
-      t.float :price
-      t.references :category, null: false, foreign_key: true
+      t.integer :parent_id
       t.timestamps
     end
   end
