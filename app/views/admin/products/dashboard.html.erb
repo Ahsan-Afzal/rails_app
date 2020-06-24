@@ -1,11 +1,11 @@
 <h1>All Products</h1>
-
+<%= render 'layouts/admin_header' %> 
 <% @products.each do |p| %>
 
     <div>Name:</br> <%=p.name %></div>
     <div> Description:</br><%=p.description %></div>
     <div>Price:</br><%=p.price %></div>
-    <div>Image:</br><%=image_tag(p.image) %></div>
+    <div>Image:</br><%=image_tag(p.image, style: 'width:150px; height:150px') %></div>
      <%= link_to "show", admin_product_path(p) %>
     <%= link_to 'Edit', edit_admin_product_path(p) %>
     <%= link_to 'Delete', admin_product_path(p),
