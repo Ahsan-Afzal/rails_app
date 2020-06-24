@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'acts_as_shopping_cart'
@@ -44,9 +43,7 @@ group :development do
   gem 'sqlite3'
 end
 
-group :production do
- gem 'pg', '~> 0.18.4'
-end
+
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
@@ -59,3 +56,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+group :production do
+ gem 'pg'
+end
