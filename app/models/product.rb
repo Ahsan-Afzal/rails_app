@@ -7,6 +7,10 @@ class Product < ApplicationRecord
     has_one_attached :image
     belongs_to :category
 
+    validate :check_file_presence
 
+    def check_file_presence
+      errors.add(:image, "not added") unless image.attached?
+    end
     
 end
